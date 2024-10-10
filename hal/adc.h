@@ -75,7 +75,9 @@
 #define EnableADCInterrupt()            _AD1CH1IE = 1
 #define DisableADCInterrupt()           _AD1CH1IE = 0
 #define HAL_MC1ADCInterrupt             _AD1CH1Interrupt  
-#define HAL_MC1ADCInterruptFlagClear()    _AD1CH1IF = 0      
+#define HAL_MC1ADCInterruptFlagClear()    _AD1CH1IF = 0    
+        
+#define HAL_AD1CH1SWTrigger() AD1SWTRG = 0x0002; //Trigger channel1
               
 // *****************************************************************************
 // *****************************************************************************

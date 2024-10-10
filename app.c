@@ -87,6 +87,8 @@ void __attribute__((__interrupt__, no_auto_psv))_T1Interrupt(void){
     myStruct.rad = ((double) sawTooth) * PI / 360.0;
     myStruct.sinus = gain * sin(myStruct.rad);
     
+    HAL_AD1CH1SWTrigger();//Trigger POT conversion
+    
     X2Cscope_Update(); // SAmple point of X2Cscope
     
     // Clear interrupt flag in the end

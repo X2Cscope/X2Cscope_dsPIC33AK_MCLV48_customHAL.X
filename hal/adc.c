@@ -86,23 +86,13 @@ void Init_ADC(void);
  */
 void Init_ADC(void)
 {
-    AD1CH0CONbits.PINSEL = 0;       // ADC1 Channel 0 for IA (AD1AN0)
-    AD1CH0CONbits.SAMC = 7;         // maximum sampling time (180nS)
-    AD1CH0CONbits.TRG1SRC = 4;      // software trigger
-    AD1CH0CONbits.LEFT = 0;
-    AD1CH0CONbits.DIFF = 0;
-    
+   
     AD1CH1CONbits.PINSEL = 10;      // ADC1 Channel 1 for POT (AD1AN10)
     AD1CH1CONbits.SAMC = 7;         // maximum sampling time (180nS)
     AD1CH1CONbits.TRG1SRC = 4;      // software trigger
     AD1CH1CONbits.LEFT = 0;
     AD1CH1CONbits.DIFF = 0;
     
-    AD2CH0CONbits.PINSEL = 1;       // ADC2 Channel 0 for IB (AD2AN1)
-    AD2CH0CONbits.SAMC = 7;         // maximum sampling time (180nS)
-    AD2CH0CONbits.TRG1SRC = 4;      // software trigger
-    AD2CH0CONbits.LEFT = 0;
-    AD2CH0CONbits.DIFF = 0;
 
     _AD1CH1IP = 7;
     _AD1CH1IF = 0;
@@ -110,7 +100,4 @@ void Init_ADC(void)
     
     AD1CONbits.ON = 1;              // enable ADC`
     while(AD1CONbits.ADRDY == 0);   // wait when it is ready 
-    AD2CONbits.ON = 1;              // enable ADC2
-    while(AD2CONbits.ADRDY == 0);   // wait when it is ready   
-
 }
