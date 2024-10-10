@@ -1,24 +1,16 @@
 # Model based X2C Blinky demo MCLV-48V-300W and dsPIC33AK128MC106 Motor Control DIM
 
 ## 1. INTRODUCTION
-This is a model based design with X2C. It is a minimalistic blinky demo code to show basic usage of the tools and the dsPIC33A MCU.
+This is a minimalistic blinky demo code to show how easy to integrate X2Cscope into a custom firmware. It can be used to test the X2Cscope tool features with dsPIC33A MCU.
 This was generated without using MCC and demonstrated the use of the two button switches, potentiometer and two LEDs.
-
-### Video Tutorial
-
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/bFCGqGZ8dSI/0.jpg)](https://www.youtube.com/watch?v=bFCGqGZ8dSI)
 
 ## 2. REQUIREMENTS
 
 ### 2.2 Software Tools Used for Testing the firmware
-- MPLAB® X IDE **MPLABX v6.20** 
+- MPLAB® X IDE **MPLABX v6.20** or VScode
 - DFP: **dsPIC33AK-MC_DEV_DFP v1.0.33** Update process: [link](https://microchip.my.site.com/s/article/Programming-and-Debugging-the-dsPIC33A-on-MPLAB-X-IDE-v6-20-and-IPE-v6-20)
 - MPLAB® XC16 Compiler **XC-DSC_3.10**
 - MPLAB® PICkit™ on board 4 In-Circuit Debugger 
-- Scilab v2023.1.0
-- X2C v6.5.3419 (Nightly Builds Section)
-
-
 
 ### 2.3 Hardware Tools Required for the Demonstration
 - MCLV-48V-300W Inverter Board [(EV18H47A)](https://www.microchip.com/en-us/development-tool/EV18H47A)
@@ -57,38 +49,22 @@ Install MPLAB X IDE and MPLAB XC-DSC Compiler versions that support the device d
 - MPLAB XC-DSC Compiler installation steps, refer [link](https://microchipdeveloper.com/XCDSC:installation)
 - Update MPLAB X programmer/debugger interface plugins and Device Firmware Packages (DFP) [link](https://microchip.my.site.com/s/article/Programming-and-Debugging-the-dsPIC33A-on-MPLAB-X-IDE-v6-20-and-IPE-v6-20)
 
-### 4.2 Setup: Scilab and X2C Version
+### 4.2 Setup: X2Cscope
 
-Make sure you have the required X2C version loaded on Scilab.
-- Open Scilab and watch on the command line output which version is loaded:
-```
-Start X2C
-- Version: 6.5.3419
-``` 
-- If it is not this version, type on the Scilab Console:
-```
-initX2C(%f)
-```
-- If you have to download X2C do as follows:
-    <p align="left">
-    <img  src="images/InstallingX2C.gif"></p>
-    <p align="left">
-    <img  src="images/image.png"></p>
-- Navigate to the desired X2C version installation's folder and execute on Scilab the following script: 
-```
-System / Scilab / Scripts / setup.sce
-```
-- Restart Scilab
+On PC side SW you can use pyX2Cscope:
+https://x2cscope.github.io/pyx2cscope/
 
-### 4.2 RUN
-1. Open the project in MPLABX, then program the device. (Make and program button)
-2. LD2 should start to blink (Potentiometer sets the blinking frequency.)
-3. Open scilab and navigate to X2Cscope folder, start init script or open the model
-4. Start the communicator (Orange boxes inside the model)
-5. Transform the model (Orange boxes inside the model)
-6. Check serial settings (At the communicator window, setup tab)
-7. Connect to the HW (Connection button)
-8. Monitor live signals with watch and scope functionalities
+Or MPLAB X built-in plug-in:
+https://x2cscope.github.io/docs/MPLABX_Plugin.html
+
+
+### 4.3 RUN
+1. Open the project in MPLABX or VScode, then program the device. (Make and program button)
+2. LD2 should start to blink.
+3. Open MPLAB X X2Cscope plugin or start pyX2Cscope
+4. Check serial settings (At the communicator window, setup tab)
+5. Connect to the HW (Connection button)
+6. Monitor live signals with watch and scope functionalities
 
 
 ## 5.0 Peripheral Connections: 
