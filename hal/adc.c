@@ -89,7 +89,7 @@ void Init_ADC(void)
    
     AD1CH1CONbits.PINSEL = 10;      // ADC1 Channel 1 for POT (AD1AN10)
     AD1CH1CONbits.SAMC = 7;         // maximum sampling time (180nS)
-    AD1CH1CONbits.TRG1SRC = 4;      // software trigger
+    AD1CH1CONbits.TRG1SRC = 1;      // software trigger
     AD1CH1CONbits.LEFT = 0;
     AD1CH1CONbits.DIFF = 0;
     

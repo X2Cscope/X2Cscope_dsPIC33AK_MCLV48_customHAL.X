@@ -13,6 +13,7 @@
 #include "hal/adc.h"
 #include "hal/port_config.h"
 #include "X2CScope/X2Cscope.h"
+#include "../X2Cscope_dsPIC33AK_MCLV48_customHAL.X/hal/adc.h"
 #define PI (3.14)
 /**
  Section: Global Variables
@@ -26,7 +27,7 @@ uint16_t sawTooth;
 uint8_t speed = 1; // slope speed of the sawtooth
 int16_t gain = 100; // amplitude of the generated sawtooth
 
-volatile int32_t pot = 0, adcDataBuffer ;
+volatile int32_t pot = 0;
 
 
 typedef struct _MY_STRUCT_T
@@ -99,8 +100,6 @@ void __attribute__((__interrupt__, no_auto_psv))_AD1CH1Interrupt(void)
 {       
 
     pot = ADCBUF_POT;
-    
-    adcDataBuffer = AD1CH0DATA;
     HAL_MC1ADCInterruptFlagClear();
 }
 
