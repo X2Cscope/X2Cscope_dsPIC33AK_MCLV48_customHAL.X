@@ -1,0 +1,74 @@
+{
+    "version": "1.1",
+    "configurations": [
+        {
+            "name": "default",
+            "id": "conf1",
+            "targetDevice": "dsPIC33AK128MC106",
+            "packs": [
+                {
+                    "name": "dsPIC33AK-MC_DFP",
+                    "vendor": "Microchip",
+                    "version": "1.0.33"
+                }
+            ],
+            "fileSet": "projectFiles",
+            "libsFileSet": "Libraries",
+            "outputFiles": [
+                {
+                    "name": "build",
+                    "toolchain": "default-XCDSC",
+                    "imagePath": "./out/x2cscope_dspic33ak_mclv48/default.elf"
+                }
+            ]
+        }
+    ],
+    "propertyGroups": [
+        {
+            "name": "default-XCDSC",
+            "type": "toolchain",
+            "provider": "microchip.toolchains:xcdsc-toolchain@3.20",
+            "properties": {}
+        }
+    ],
+    "fileSets": [
+        {
+            "name": "projectFiles",
+            "files": [
+                "main.c",
+                
+                "app.c",
+                "app.h",
+
+                "hal/adc.c",
+                "hal/clock.c",
+                "hal/device_config.c",
+                "hal/measure.c",
+                "hal/port_config.c",
+                "hal/pwm.c",
+                "hal/timer1.c",
+                "hal/uart1.c",
+
+                "hal/adc.h",
+                "hal/clock.h",
+                "hal/measure.h",
+                "hal/port_config.h",
+                "hal/pwm.h",
+                "hal/timer1.h",
+                "hal/uart1.h",
+
+                "X2Cscope/X2Cscope.c",
+                "X2Cscope/X2CscopeComm.c",
+
+                "X2Cscope/X2Cscope.h",
+                "X2Cscope/X2CscopeComm.h"              
+            ]
+        },
+        {
+            "name": "Libraries",
+            "files": [
+                "X2Cscope/libx2cscope2-generic-pic24-dspic33-elf.a"
+            ]
+        }
+    ]
+}

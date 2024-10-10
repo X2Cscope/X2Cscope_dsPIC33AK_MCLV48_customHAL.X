@@ -8,6 +8,7 @@ debug/
 run/
 queuelogs/
 .generated_files/
+.generated-cmakefiles/
 # folder to ignore where *.X is not root of repository
 **/*.X/build/
 **/*.X/nbbuild/
